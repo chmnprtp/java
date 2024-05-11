@@ -1,0 +1,17 @@
+Q - Difference Between String and StringBuffer
+
+String - Once we creates a string object we can't perform any changes in the existing Object.
+         if we are trying to perform any changes with those changes new object will be created.
+         this non-changable nature is nothing but IMMUTABILITY of string object.
+
+Example - String s = new String("Chaman");
+          s.concat("Pratap");
+          Sopen(s);
+
+
+StringBuffer - Once we creates a StringBuffer object we can perform any changes in the existing
+               object. this changable is nothing but MUTABILITY of the StringBuffer object.
+
+Example - StringBuffer sb = new StringBuffer("Chaman");
+          s.append("Pratap");
+          Sopen(sb);
