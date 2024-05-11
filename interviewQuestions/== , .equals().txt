@@ -1,1 +1,9 @@
-Q - 
+Q - Difference Between == operator and .equals() method?
+
+we use == operator for reference comparison whereas,
+.equals method for content comparison.
+
+Example - String s1 = new String("Chaman);
+          String s2 = new String("Chaman);
+          Sopen(s1==s2);            //false
+          Sopen(s1.equals(s2));     //ture
