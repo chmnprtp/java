@@ -1,0 +1,16 @@
+Q - Difference Between StringBuffer and StringBuilder?
+
+StringBuilder is exactly same as StringBuffer(including Methods and Constructors) except the
+following differences.
+
+
+        StringBuffer                               StringBuilder
+1. Every method present in StringBuffer       1. No method present in StringBuilder is 
+    is synchronized                               synchronized.
+2. At a time only thread is allow to          2. At a time multiple threads are allow to
+    operate on StringBuffer object.              operate on StringBuilder object and hence.
+  Hence StringBuffer object is Thread safe      StringBuilder object is not thread safe.
+3. It increases waiting time of threads and   3. Threads are not required to wait to operate
+    hence relatively performance is low.        on StringBuilder object and hence relatively
+                                                performance is high
+4. Introduced in 1.0 version                  4. Introduced in 1.5 version.
