@@ -1,0 +1,106 @@
+| MODIFIER|  Class  | Class  | Methods | Variables| Blocks | Interface | Interface | Enum | Enum | Constructors                                                                                   
+|_________|_(Outer)_  (Inner)|         |          |        |  (Outer)  |  (Inner)  | Outer| Inner|                                                                            
+| Public  |    👍   |   👍    |   👍    |   👍     |        |    👍      |   👍      |  👍  |  👍   |   👍                 
+| Private |         |   👍    |   👍    |   👍     |        |           |   👍      |      |  👍   |   👍                                      
+|Protected|         |   👍    |   👍    |   👍     |        |           |   👍      |      |  👍   |   👍                
+|<default>|    👍   |   👍    |   👍    |   👍     |        |    👍     |    👍      |     |  👍    |   👍                  
+|  final  |    👍   |   👍    |   👍    |   👍     |        |           |           |  👍  |       |                                                     
+| abstract|    👍   |   👍    |   👍    |          |        |           |   👍      |      |       |               
+|  static |         |   👍    |  👍     |  👍      |        |    👍     |   👍       |      |  👍   |                    
+|synchronized|      |        |   👍    |          |  👍     |           |           |     |       |             
+| native  |         |        |   👍    |          |  👍     |           |           |     |       |             
+| strictfp|    👍   |   👍        👍    |          |        |           |           |     |  👍   |                
+|transient|         |                  |   👍     |         |   👍      |   👍      | 👍   |      |                
+| volatile|         |                  |   👍     |         |           |          |      |      |            
+|         |         |                  |          |         |           |          |      |      |           
+|         |         |                                                                                  
+|         |         |                                                                                  
+|         |         |
+
+
+Important Conclusion :-
+1 - The modifiers which are applicable for inner classes but not outer classes.  (private,protected,static)
+2 - The modifiers which are applicable for classes but not for Interface are final.
+3 - The modifiers which are applicable for classes but not for enums are final and abstract.
+4 - The modifiers which are applicable for methods and which can't use anyware else native.
+5 - The only modifiers which are applicable for Constructors are - public, private, protected, default.
+6 - The only applicable modifier for local variable is final.
+
+
+We can declare -
+
+class inside class
+class a
+{
+    class B
+    {
+
+    }
+}
+
+Interface inside class
+Class a
+{
+    interface B         // always static whether declare or not
+    {
+    
+    }
+}
+
+interface inside interface
+interface A
+{
+    interface B.       // always public and static whether declare or not
+    {
+
+    }
+}
+
+class inside interface
+interface A
+{
+    Class B            // public and static always 
+    {
+
+    }
+}
+
+
+
+1- The interface which is declare inside a class is always static whether we are declaring or not.
+2 -The interface which is declare inside a interface is always public and static whether we are declaring or not.
+3 -The class which is declare inside a interface is always public and static whether we are declaring or not.
+
+
+ILLIGAL Combination
+
+For Methods:--
+if method declare
+Public - can't declare simultaniously - private 
+                                      - protected
+not vice versa also
+:--
+if method declare
+abstract - can't declare simultaniously - final 
+                                        - static
+                                        - synchronized
+                                        - native
+                                        - private
+                                        - strictfp
+
+
+For Variables:--
+if Variables declare
+Public - can't declare simultaniously - private 
+                                      - protected
+if Variables declare
+final - can't declare simultaniously - volatile 
+
+
+For Class:--
+if Class declare
+Public - can't declare simultaniously - private 
+                                      - protected
+if Class declare
+final - can't declare simultaniously - abstract
+                                    
